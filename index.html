@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Wander</title>
+</head>
+<body>
+
+<div id="home" class="screen active">
+  <nav class="home-nav">
+    <div class="logo">Wander</div>
+    <div class="nav-tag">Destination Discovery</div>
+  </nav>
+  <div class="home-hero">
+    <p class="hero-eyebrow">✦ travel made effortless</p>
+    <h1 class="hero-title">
+      <span class="outlined">Where to</span><br>
+      <em>next?</em>
+    </h1>
+    <p class="hero-sub">Stop dreaming and just start traveling. Pick a vibe and let Wander find your next destination.</p>
+    <button class="hero-cta" onclick="goTo('vibe-picker');pendingMode='swipe'">Start exploring →</button>
+  </div>
+  <div class="modes-grid">
+    <div class="mode-card" data-color="blue" onclick="startMode('swipe')">
+      <div class="mode-card-bg" style="background-image: url('https://plus.unsplash.com/premium_photo-1718138656404-1089825cde0d?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c3dpcGV8ZW58MHx8MHx8fDA%3D');"></div>
+      <div class="mode-overlay"></div>
+      <div class="mode-content">
+        <div class="mode-arrow">↗</div>
+        <div class="mode-label-box">
+          <div class="mode-label">Swipe</div>
+          <div class="mode-desc">Yes or no on destinations</div>
+        </div>
+      </div>
+    </div>
+    <div class="mode-card" data-color="teal" onclick="startMode('spin')">
+      <div class="mode-card-bg" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXiWrfpn9nRUlAW-S89W61IzfSgOglc0Aaag&s');"></div>
+      <div class="mode-overlay"></div>
+      <div class="mode-content">
+        <div class="mode-arrow">↗</div>
+        <div class="mode-label-box">
+          <div class="mode-label">Spin</div>
+          <div class="mode-desc">Let the globe decide</div>
+        </div>
+      </div>
+    </div>
+    <div class="mode-card" data-color="amber" onclick="startMode('bracket')">
+      <div class="mode-card-bg" style="background-image: url('https://plus.unsplash.com/premium_photo-1713628398142-b0a4be37e94a?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dHJvcGh5JTIwY2FzZXxlbnwwfHwwfHx8MA%3D%3D');"></div>
+      <div class="mode-overlay"></div>
+      <div class="mode-content">
+        <div class="mode-arrow">↗</div>
+        <div class="mode-label-box">
+          <div class="mode-label">Competition</div>
+          <div class="mode-desc">Destination tournament</div>
+        </div>
+      </div>
+    </div>
+    <div class="mode-card" data-color="rose" onclick="startMode('ai')">
+      <div class="mode-card-bg" style="background-image: url('https://plus.unsplash.com/premium_vector-1682310575839-a2c0e49edb1a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0');"></div>
+      <div class="mode-overlay"></div>
+      <div class="mode-content">
+        <div class="mode-arrow">↗</div>
+        <div class="mode-label-box">
+          <div class="mode-label">Quiz</div>
+          <div class="mode-desc">Describe your dream trip</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">4</div><div class="stat-lbl">Modes</div></div>
+    <div class="stat"><div class="stat-num">40+</div><div class="stat-lbl">Destinations</div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-lbl">Vibes</div></div>
+  </div>
+</div>
+
+<div id="vibe-picker" class="screen">
+  <div class="screen-header">
+    <button class="back-btn" onclick="goTo('home')">←</button>
+    <div class="screen-title">Pick your travel vibe</div>
+  </div>
+  <div class="vibe-grid">
+    <div class="vibe-chip" onclick="selectVibe(this,'Beach')">
+      <div class="vibe-chip-bg" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2h8ZW58MHx8MHx8fDA%3D');"></div>
+      <div class="vibe-chip-inner">
+        <div class="vibe-label-box">
+          <div class="vibe-name">Beach</div>
+          <div class="vibe-sub">Sun, sand, sea</div>
+        </div>
+      </div>
+    </div>
+    <div class="vibe-chip" onclick="selectVibe(this,'City')">
+      <div class="vibe-chip-bg" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2l0eXxlbnwwfHwwfHx8MA%3D%3D');"></div>
+      <div class="vibe-chip-inner">
+        <div class="vibe-label-box">
+          <div class="vibe-name">City</div>
+          <div class="vibe-sub">Culture & nightlife</div>
+        </div>
+      </div>
+    </div>
+    <div class="vibe-chip" onclick="selectVibe(this,'Nature')">
+      <div class="vibe-chip-bg" style="background-image: url('https://plus.unsplash.com/premium_photo-1675198764473-30434364c8b6?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bmF0dXJlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D');"></div>
+      <div class="vibe-chip-inner">
+        <div class="vibe-label-box">
+          <div class="vibe-name">Nature</div>
+          <div class="vibe-sub">Wild & off-grid</div>
+        </div>
+      </div>
+    </div>
+    <div class="vibe-chip" onclick="selectVibe(this,'Cultural')">
+      <div class="vibe-chip-bg" style="background-image: url('https://images.unsplash.com/photo-1521295121783-8a321d551ad2?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29ybGQlMjBoaXN0b3J5fGVufDB8fDB8fHww');"></div>
+      <div class="vibe-chip-inner">
+        <div class="vibe-label-box">
+          <div class="vibe-name">Cultural</div>
+          <div class="vibe-sub">History & heritage</div>
+        </div>
+      </div>
+    </div>
+    <div class="vibe-chip" onclick="selectVibe(this,'Luxury')">
+      <div class="vibe-chip-bg" style="background-image: url('https://plus.unsplash.com/premium_photo-1661902934269-17eaf4b04f9f?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bHV4dXJ5JTIwbGl2aW5nfGVufDB8fDB8fHww');"></div>
+      <div class="vibe-chip-inner">
+        <div class="vibe-label-box">
+          <div class="vibe-name">Luxury</div>
+          <div class="vibe-sub">Indulgent escapes</div>
+        </div>
+      </div>
+    </div>
+    <div class="vibe-chip" onclick="selectVibe(this,'Adventure')">
+      <div class="vibe-chip-bg" style="background-image: url('https://images.unsplash.com/photo-1542359649-31e03cd4d909?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YWR2ZW50dXJlfGVufDB8fDB8fHww');"></div>
+      <div class="vibe-chip-inner">
+        <div class="vibe-label-box">
+          <div class="vibe-name">Adventure</div>
+          <div class="vibe-sub">Thrills & adrenaline</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="continue-btn" id="continue-btn" onclick="launchMode()">Continue</button>
+</div>
+
+<div id="swipe-mode" class="screen">
+  <div class="screen-header">
+    <button class="back-btn" onclick="goTo('home')">←</button>
+    <div class="screen-title">Swipe destinations</div>
+  </div>
+  <div class="swipe-arena" id="swipe-arena"></div>
+  <div class="swipe-actions">
+    <button class="swipe-btn nope" onclick="doSwipe('left')">✕</button>
+    <button class="swipe-btn yes" onclick="doSwipe('right')">♥</button>
+  </div>
+  <div class="swipe-progress" id="swipe-progress"></div>
+</div>
+
+<div id="spin-mode" class="screen">
+  <div class="screen-header">
+    <button class="back-btn" onclick="goTo('home')">←</button>
+    <div class="screen-title">Spin the globe</div>
+  </div>
+  <div class="spin-container">
+    <div class="wheel-wrap">
+      <div class="wheel-pointer">▼</div>
+      <canvas id="wheel-canvas" width="280" height="280"></canvas>
+    </div>
+    <div class="spin-result">
+      <div class="spin-result-label">Your destination</div>
+      <div class="spin-result-name" id="spin-result-text">Spin to reveal</div>
+    </div>
+    <button class="spin-btn" id="spin-btn" onclick="spinWheel()">Spin the globe</button>
+  </div>
+</div>
+
+<div id="bracket-mode" class="screen">
+  <div class="screen-header">
+    <button class="back-btn" onclick="goTo('home')">←</button>
+    <div class="screen-title">Destination tournament</div>
+  </div>
+  <div class="bracket-container" id="bracket-container"></div>
+</div>
+
+<div id="ai-mode" class="screen">
+  <div class="screen-header">
+    <button class="back-btn" onclick="goTo('home')">←</button>
+    <div class="screen-title">Quiz</div>
+  </div>
+  <div class="quiz-container">
+    <div class="quiz-prompt-area">
+      <div class="quiz-prompt-label">Describe your dream trip</div>
+      <textarea class="quiz" id="quiz" placeholder="e.g. 'somewhere warm with great food and history, not too touristy'" rows="3"></textarea>
+    </div>
+    <div class="vibes-row">
+      <div class="vibe-pill" onclick="addVibe(this)">warm weather</div>
+      <div class="vibe-pill" onclick="addVibe(this)">hidden gem</div>
+      <div class="vibe-pill" onclick="addVibe(this)">beach vibes</div>
+      <div class="vibe-pill" onclick="addVibe(this)">romantic getaway</div>
+      <div class="vibe-pill" onclick="addVibe(this)">solo adventure</div>
+      <div class="vibe-pill" onclick="addVibe(this)">foodie heaven</div>
+    </div>
+    <button class="quiz-submit" id="quiz-submit" onclick="getAIPicks()">Find my destinations ✦</button>
+    <div class="quiz-response" id="quiz-response">
+      <div class="quiz-placeholder">
+        <div class="quiz-placeholder-icon">✈️</div>
+        <div class="quiz-placeholder-text">Describe your ideal trip and we'll find 3 perfect destinations for you.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
