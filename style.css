@@ -45,8 +45,8 @@ body{font-family:'Inter',sans-serif;background:var(--white);color:var(--navy);mi
 .mode-label{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--navy);}
 .mode-desc{font-size:0.67rem;color:var(--slate);font-weight:300;}
 .mode-card[data-color="blue"]:not(:hover){background:#F0F6FF;}
-.mode-card[data-color="amber"]:not(:hover){background:#FFFDF8;}
-.mode-card[data-color="amber"]:not(:hover){background:#FFFDF8;}
+.mode-card[data-color="amber"]:not(:hover){background:#F0F6FF;}
+.mode-card[data-color="amber"]:not(:hover){background:#F0F6FF;}
 .mode-card[data-color="blue"]:not(:hover){background:#F0F6FF;}
 
 /* STATS */
@@ -95,10 +95,11 @@ body{font-family:'Inter',sans-serif;background:var(--white);color:var(--navy);mi
 
 /* SPIN */
 #spin-mode{background:var(--sky);}
-.spin-container{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;gap:1.5rem;}
+.spin-container{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:1.5rem;gap:1.5rem;overflow-y:auto;}
 .wheel-wrap{position:relative;width:min(280px,78vw);height:min(280px,78vw);}
+#wheel-canvas{display:block;}
 .wheel-pointer{position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:1.4rem;z-index:10;}
-.spin-result{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.1rem 1.5rem;text-align:center;min-width:220px;min-height:64px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;box-shadow:0 4px 16px rgba(201,168,76,0.18);}
+.spin-result{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.1rem 1.5rem;text-align:center;width: min(280px, 88vw);min-height:64px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;box-shadow:0 4px 16px rgba(201,168,76,0.18);}
 .spin-result-label{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);}
 .spin-result-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--navy);}
 .spin-btn{background:var(--navy);color:#fff;border:none;padding:0.8rem 2.2rem;font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:3px;transition:background 0.2s;}

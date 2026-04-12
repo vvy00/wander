@@ -204,27 +204,13 @@ function initSwipe() {
 
 // ─── SPIN ─────────────────────────────────────────────────────────────────────
 
-function initSpin() { goTo('spin-mode'); drawWheel(0); }
-
-function drawWheel(r) {
-  const c = document.getElementById('wheel-canvas'); if (!c) return;
-  const ctx = c.getContext('2d');
-  const items = destinations[currentVibe] || destinations.Beach;
-  const n = items.length, arc = (Math.PI * 2) / n, cx = 140, cy = 140, rad = 130;
-  ctx.clearRect(0, 0, 280, 280);
-  for (let i = 0; i < n; i++) {
-    const s = r + i * arc, e = s + arc;
-    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, rad, s, e);
-    ctx.fillStyle = wheelColors[i % wheelColors.length]; ctx.fill();
-    ctx.strokeStyle = '#F0F6FF'; ctx.lineWidth = 2; ctx.stroke();
-    ctx.save(); ctx.translate(cx, cy); ctx.rotate(s + arc / 2);
-    ctx.textAlign = 'right'; ctx.fillStyle = '#fff';
-    ctx.font = '500 11px Inter,sans-serif';
-    ctx.fillText(items[i].name, rad - 12, 4); ctx.restore();
-  }
-  ctx.beginPath(); ctx.arc(cx, cy, 18, 0, Math.PI * 2);
-  ctx.fillStyle = '#F0F6FF'; ctx.fill();
-  ctx.strokeStyle = wheelColors[0]; ctx.lineWidth = 1.5; ctx.stroke();
+function initSpin() {
+  goTo('spin-mode');
+  document.querySelector('.spin-result').innerHTML = `
+    <div class="spin-result-label">Your destination</div>
+    <div class="spin-result-name" id="spin-result-text">Spin to reveal</div>`;
+  wheelAngle = 0;
+  setTimeout(() => drawWheel(0), 50);
 }
 
 function spinWheel() {
@@ -232,7 +218,8 @@ function spinWheel() {
   isSpinning = true;
   const btn = document.getElementById('spin-btn');
   btn.disabled = true;
-  document.getElementById('spin-result-text').textContent = '...';
+  const textEl = document.getElementById('spin-result-text');
+  if (textEl) textEl.textContent = '...';
   const total = (Math.PI * 2) * (5 + Math.random() * 5), dur = 3200, start = performance.now(), startA = wheelAngle;
   function animate(now) {
     const el = now - start, p = Math.min(el / dur, 1), ease = 1 - Math.pow(1 - p, 4);
@@ -244,9 +231,45 @@ function spinWheel() {
     const norm = ((wheelAngle % (Math.PI * 2)) + (Math.PI * 2)) % (Math.PI * 2);
     const ptr = Math.PI * 1.5;
     const idx = Math.floor(((ptr - norm + (Math.PI * 2)) % (Math.PI * 2)) / arc) % n;
-    document.getElementById('spin-result-text').textContent = items[idx].name + ', ' + items[idx].country;
+    const dest = items[idx];
+    const resultEl = document.querySelector('.spin-result');
+    resultEl.innerHTML = `
+      <div style="width:100%;max-width:280px;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:var(--white);">
+        <img src="${dest.img}" style="width:100%;height:160px;object-fit:cover;display:block;" />
+        <div style="padding:0.9rem 1rem 1rem;">
+          <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);font-weight:500;margin-bottom:4px">Your destination</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--navy)">${dest.name}</div>
+          <div style="font-size:0.72rem;color:var(--slate);margin-top:2px">${dest.country} · ${dest.region}</div>
+          <div style="font-size:0.72rem;color:var(--slate);font-weight:300;margin-top:4px">${dest.detail}</div>
+        </div>
+      </div>
+      <button onclick="initSpin()" style="background:var(--navy);color:#fff;border:none;padding:0.75rem 1.5rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px;margin-top:0.5rem;">Spin again</button>`;
   }
   requestAnimationFrame(animate);
+}
+
+function drawWheel(r) {
+  const c = document.getElementById('wheel-canvas');
+  if (!c) return;
+  c.width = 280;
+  c.height = 280;
+  const ctx = c.getContext('2d');
+  const items = destinations[currentVibe] || destinations.Beach;
+  const n = items.length, arc = (Math.PI * 2) / n, cx = 140, cy = 140, rad = 130;
+  ctx.clearRect(0, 0, 280, 280);
+  for (let i = 0; i < n; i++) {
+    const s = r + i * arc, e = s + arc;
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, rad, s, e);
+    ctx.fillStyle = wheelColors[i % wheelColors.length]; ctx.fill();
+    ctx.strokeStyle = '#E8C87A'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(s + arc / 2);
+    ctx.textAlign = 'right'; ctx.fillStyle = '#fff';
+    ctx.font = '500 11px Inter,sans-serif';
+    ctx.fillText(items[i].name, rad - 12, 4); ctx.restore();
+  }
+  ctx.beginPath(); ctx.arc(cx, cy, 18, 0, Math.PI * 2);
+  ctx.fillStyle = '#C9A84C'; ctx.fill();
+  ctx.strokeStyle = '#1A2B3C'; ctx.lineWidth = 1.5; ctx.stroke();
 }
 
 // ─── BRACKET ──────────────────────────────────────────────────────────────────
