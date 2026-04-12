@@ -10,7 +10,10 @@
 
 <div id="home" class="screen active">
   <nav class="home-nav">
-    <div class="logo">Wander</div>
+    <div class="logo">
+      <img src="images/wanderlogo.png" style="width:28px;height:28px;object-fit:contain;display:inline-block;vertical-align:middle;margin-right:0.5rem;" />
+      Wander
+    </div>
     <div class="nav-tag">Destination Discovery</div>
   </nav>
   <div class="home-hero">
@@ -24,7 +27,7 @@
   </div>
   <div class="modes-grid">
     <div class="mode-card" data-color="blue" onclick="startMode('swipe')">
-      <div class="mode-card-bg" style="background-image: url('https://plus.unsplash.com/premium_photo-1718138656404-1089825cde0d?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c3dpcGV8ZW58MHx8MHx8fDA%3D');"></div>
+      <div class="mode-card-bg" style="background-image: url('https://images.unsplash.com/photo-1654440059496-133b3c97c823?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHN3aXBlJTIwcmlnaHR8ZW58MHx8MHx8fDA%3D');"></div>
       <div class="mode-overlay"></div>
       <div class="mode-content">
         <div class="mode-arrow">↗</div>
@@ -34,7 +37,7 @@
         </div>
       </div>
     </div>
-    <div class="mode-card" data-color="teal" onclick="startMode('spin')">
+    <div class="mode-card" data-color="amber" onclick="startMode('spin')">
       <div class="mode-card-bg" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXiWrfpn9nRUlAW-S89W61IzfSgOglc0Aaag&s');"></div>
       <div class="mode-overlay"></div>
       <div class="mode-content">
@@ -56,8 +59,8 @@
         </div>
       </div>
     </div>
-    <div class="mode-card" data-color="rose" onclick="startMode('ai')">
-      <div class="mode-card-bg" style="background-image: url('https://plus.unsplash.com/premium_vector-1682310575839-a2c0e49edb1a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0');"></div>
+    <div class="mode-card" data-color="blue" onclick="startMode('ai')">
+      <div class="mode-card-bg" style="background-image: url('https://plus.unsplash.com/premium_photo-1678216285961-d4271edbde42?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cXVpenp8ZW58MHx8MHx8fDA%3D');"></div>
       <div class="mode-overlay"></div>
       <div class="mode-content">
         <div class="mode-arrow">↗</div>
@@ -183,27 +186,7 @@
     <button class="back-btn" onclick="goTo('home')">←</button>
     <div class="screen-title">Quiz</div>
   </div>
-  <div class="quiz-container">
-    <div class="quiz-prompt-area">
-      <div class="quiz-prompt-label">Describe your dream trip</div>
-      <textarea class="quiz" id="quiz" placeholder="e.g. 'somewhere warm with great food and history, not too touristy'" rows="3"></textarea>
-    </div>
-    <div class="vibes-row">
-      <div class="vibe-pill" onclick="addVibe(this)">warm weather</div>
-      <div class="vibe-pill" onclick="addVibe(this)">hidden gem</div>
-      <div class="vibe-pill" onclick="addVibe(this)">beach vibes</div>
-      <div class="vibe-pill" onclick="addVibe(this)">romantic getaway</div>
-      <div class="vibe-pill" onclick="addVibe(this)">solo adventure</div>
-      <div class="vibe-pill" onclick="addVibe(this)">foodie heaven</div>
-    </div>
-    <button class="quiz-submit" id="quiz-submit" onclick="getAIPicks()">Find my destinations ✦</button>
-    <div class="quiz-response" id="quiz-response">
-      <div class="quiz-placeholder">
-        <div class="quiz-placeholder-icon">✈️</div>
-        <div class="quiz-placeholder-text">Describe your ideal trip and we'll find 3 perfect destinations for you.</div>
-      </div>
-    </div>
-  </div>
+  <div class="quiz-container" id="quiz-container"></div>
 </div>
 
 <script src="script.js"></script>

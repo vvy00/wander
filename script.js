@@ -47,12 +47,12 @@ let currentVibe = null, pendingMode = null, currentSwipeIndex = 0, swipeStack = 
     wheelAngle = 0, isSpinning = false, bracketMatches = [], bracketRound = 0, 
     bracketMatchIndex = 0, likedDestinations = [];
 
-const wheelColors = ['#3B7DD8','#5DCAA5','#C4A882','#D85A30','#7F77DD','#D4537E','#639922','#BA7517'];
+const wheelColors = ['#3B7DD8','#C9A84C','#1A2B3C','#E8C87A','#2A5AA8','#BA7517','#3B7DD8','#C4A882'];
 
 function goTo(id) { document.querySelectorAll('.screen').forEach(s => s.classList.remove('active')); document.getElementById(id).classList.add('active'); }
 function startMode(mode) { pendingMode = mode; goTo('vibe-picker'); }
 function selectVibe(el, vibe) { document.querySelectorAll('.vibe-chip').forEach(c => c.classList.remove('selected')); el.classList.add('selected'); currentVibe = vibe; document.getElementById('continue-btn').classList.add('ready'); }
-function launchMode() { if (!currentVibe) return; if (pendingMode === 'swipe') initSwipe(); else if (pendingMode === 'spin') initSpin(); else if (pendingMode === 'bracket') initBracket(); else if (pendingMode === 'ai') goTo('ai-mode'); }
+function launchMode() { if (!currentVibe) return; if (pendingMode === 'swipe') initSwipe(); else if (pendingMode === 'spin') initSpin(); else if (pendingMode === 'bracket') initBracket(); else if (pendingMode === 'ai') initQuiz(); }
 
 // ─── SWIPE ────────────────────────────────────────────────────────────────────
 
@@ -63,6 +63,7 @@ document.addEventListener('mousemove', onGlobalMove);
 document.addEventListener('touchmove', onGlobalMove, { passive: false });
 document.addEventListener('mouseup', onGlobalEnd);
 document.addEventListener('touchend', onGlobalEnd);
+document.addEventListener('mouseleave', onGlobalEnd);
 
 function onGlobalMove(e) {
   if (!dragIsDragging || !activeDragCard) return;
@@ -274,8 +275,8 @@ function renderBracket() {
   if (!a || !b) { showWinner(bracketMatches[0]); return; }
   const label = bracketRound === 1 ? 'Semi-final' : bracketRound === 2 ? 'Final' : `Round ${bracketRound}`;
   const prog = (bracketMatchIndex / Math.floor(bracketMatches.length / 2)) * 100;
-  const aImg = `<img src="${a.img}" style="width:100%;height:100px;object-fit:cover;display:block;" />`;
-  const bImg = `<img src="${b.img}" style="width:100%;height:100px;object-fit:cover;display:block;" />`;
+  const aImg = `<img src="${a.img}" style="width:100%;height:160px;object-fit:cover;display:block;" />`;
+  const bImg = `<img src="${b.img}" style="width:100%;height:160px;object-fit:cover;display:block;" />`;
   cont.innerHTML = `
     <div class="bracket-round">${label} · Which would you choose?</div>
     <div class="bracket-vs">
@@ -323,40 +324,145 @@ function showWinner(d) {
 
 // ─── QUIZ ─────────────────────────────────────────────────────────────────────
 
-function addVibe(el) {
-  const inp = document.getElementById('quiz');
-  inp.value = inp.value ? inp.value + ', ' + el.textContent.trim() : el.textContent.trim();
+const quizQuestions = [
+  {
+    question: "What's your ideal climate?",
+    options: ["Warm & sunny", "Cool & crisp", "Tropical & humid", "Mild & comfortable"]
+  },
+  {
+    question: "What's your travel style?",
+    options: ["Relax and do nothing", "Explore culture & history", "Adventure & outdoors", "Food, nightlife & city life"]
+  },
+  {
+    question: "How do you feel about crowds?",
+    options: ["Hidden gems only", "A little buzz is fine", "I love a lively scene", "Anywhere is fine"]
+  },
+  {
+    question: "What's your budget?",
+    options: ["Budget friendly", "Mid range", "Splurge worthy", "Money is no object"]
+  }
+];
+
+let quizAnswers = [];
+let quizStep = 0;
+
+function initQuiz() {
+  goTo('ai-mode');
+  quizAnswers = [];
+  quizStep = 0;
+  renderQuiz();
 }
 
-async function getAIPicks() {
-  const input = document.getElementById('quiz').value.trim(); if (!input) return;
-  const btn = document.getElementById('quiz-submit');
-  const resp = document.getElementById('quiz-response');
-  btn.disabled = true; btn.textContent = 'Searching...';
-  resp.innerHTML = '<div style="display:flex;gap:4px;align-items:center;padding:0.5rem 0"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>';
-  const vibe = currentVibe || 'any';
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        messages: [{ role: 'user', content: `You are a travel AI for "Wander". Travel vibe: "${vibe}". User wants: "${input}". Suggest exactly 3 destinations. Return ONLY JSON array, no markdown: [{"name":"City, Country","description":"2 sentences on why it fits perfectly","tags":["tag1","tag2","tag3"]},...].` }]
-      })
-    });
-    const data = await res.json();
-    const picks = JSON.parse(data.content.map(i => i.text || '').join('').replace(/```json|```/g, '').trim());
-    resp.innerHTML = picks.map(p => `
-      <div class="ai-dest-card">
-        <div class="ai-dest-body">
-          <div class="ai-dest-title">${p.name}</div>
-          <div class="ai-dest-desc">${p.description}</div>
-          <div class="ai-dest-tags">${p.tags.map(t => `<span class="ai-tag">${t}</span>`).join('')}</div>
-        </div>
-      </div>`).join('');
-  } catch (e) {
-    resp.innerHTML = '<div class="quiz-placeholder"><div class="quiz-placeholder-icon">✈️</div><div class="quiz-placeholder-text">Something went wrong. Try again!</div></div>';
+function renderQuiz() {
+  const cont = document.getElementById('quiz-container');
+
+  if (quizStep >= quizQuestions.length) {
+    submitQuiz();
+    return;
   }
-  btn.disabled = false; btn.textContent = 'Find my destinations ✦';
+
+  const q = quizQuestions[quizStep];
+  const progress = ((quizStep / quizQuestions.length) * 100);
+
+  cont.innerHTML = `
+    <div style="padding:1.5rem;display:flex;flex-direction:column;gap:1.25rem;flex:1">
+      <div style="background:var(--border);border-radius:10px;height:3px;overflow:hidden">
+        <div style="width:${progress}%;height:100%;background:var(--gold);border-radius:10px;transition:width 0.3s"></div>
+      </div>
+      <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);font-weight:500">
+        Question ${quizStep + 1} of ${quizQuestions.length}
+      </div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--navy);line-height:1.2">
+        ${q.question}
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:0.5rem">
+        ${q.options.map((opt, i) => `
+          <button onclick="selectQuizAnswer('${opt}')"
+            style="background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:1rem 1.25rem;text-align:left;font-family:'Inter',sans-serif;font-size:0.88rem;color:var(--navy);cursor:pointer;transition:all 0.15s;font-weight:400"
+            onmouseover="this.style.borderColor='var(--gold)';this.style.background='var(--gold-pale)'"
+            onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--white)'">
+            ${opt}
+          </button>`).join('')}
+      </div>
+    </div>`;
+}
+
+function selectQuizAnswer(answer) {
+  quizAnswers.push(answer);
+  quizStep++;
+  renderQuiz();
+}
+
+async function submitQuiz() {
+  const cont = document.getElementById('quiz-container');
+  cont.innerHTML = `
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem">
+      <div style="display:flex;gap:4px">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--navy)">Finding your perfect destination...</div>
+    </div>`;
+
+  const scores = {};
+  const allDests = destinations[currentVibe] || Object.values(destinations).flat();
+  allDests.forEach(d => scores[d.name] = 0);
+
+  const [climate, style, crowds, budget] = quizAnswers;
+
+  const warmDests = ["Tulum","Santorini","Bali","Maldives","Amalfi Coast","Dubai","Bora Bora","St. Barts","Havana","Marrakech","Petra","Vietnam","Tanzania","Peru"];
+  const coolDests = ["Iceland","Patagonia","Norway","Queenstown","Kyoto"];
+  const tropicalDests = ["Bali","Maldives","Costa Rica","Tulum","Vietnam","Tanzania","Bora Bora"];
+  const mildDests = ["Paris","Barcelona","Rome","Istanbul","Tokyo","New York"];
+
+  if (climate === "Warm & sunny") warmDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 3; });
+  if (climate === "Cool & crisp") coolDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 3; });
+  if (climate === "Tropical & humid") tropicalDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 3; });
+  if (climate === "Mild & comfortable") mildDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 3; });
+
+  const relaxDests = ["Maldives","Bora Bora","Santorini","Amalfi Coast","St. Barts","Tuscany","Bali"];
+  const cultureDests = ["Kyoto","Rome","Marrakech","Petra","Havana","Istanbul","Barcelona","Paris"];
+  const adventureDests = ["Nepal","Patagonia","Peru","Tanzania","Costa Rica","Iceland","Queenstown","Norway","Vietnam"];
+  const cityDests = ["Tokyo","New York","Barcelona","Paris","Istanbul","Dubai","Havana"];
+
+  if (style === "Relax and do nothing") relaxDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 3; });
+  if (style === "Explore culture & history") cultureDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 3; });
+  if (style === "Adventure & outdoors") adventureDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 3; });
+  if (style === "Food, nightlife & city life") cityDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 3; });
+
+  const hiddenDests = ["Tulum","Patagonia","Nepal","Costa Rica","Norway","Tuscany","Queenstown","Vietnam"];
+  const buzzDests = ["Bali","Santorini","Barcelona","Kyoto","Marrakech","Havana"];
+  const livelDests = ["New York","Tokyo","Dubai","Istanbul","Paris","Barcelona"];
+
+  if (crowds === "Hidden gems only") hiddenDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 2; });
+  if (crowds === "A little buzz is fine") buzzDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 2; });
+  if (crowds === "I love a lively scene") livelDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 2; });
+
+  const budgetDests = ["Tulum","Bali","Vietnam","Marrakech","Havana","Costa Rica","Peru"];
+  const midDests = ["Barcelona","Istanbul","Kyoto","Rome","Queenstown","Norway","Iceland"];
+  const splurgeDests = ["Santorini","Amalfi Coast","Paris","Tokyo","New York","Tuscany"];
+  const luxDests = ["Maldives","Bora Bora","Dubai","St. Barts","Nepal","Tanzania","Petra"];
+
+  if (budget === "Budget friendly") budgetDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 2; });
+  if (budget === "Mid range") midDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 2; });
+  if (budget === "Splurge worthy") splurgeDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 2; });
+  if (budget === "Money is no object") luxDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 2; });
+
+  const winner = allDests.reduce((best, d) => scores[d.name] > scores[best.name] ? d : best, allDests[0]);
+
+  await new Promise(r => setTimeout(r, 1200));
+
+  cont.innerHTML = `
+    <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center;padding:1.5rem">
+      <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);font-weight:500">Your perfect match</div>
+      <div style="width:100%;max-width:320px;height:200px;border-radius:10px;overflow:hidden">
+        <img src="${winner.img}" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--navy)">${winner.name}</div>
+      <div style="font-size:0.75rem;color:var(--slate)">${winner.country} · ${winner.region}</div>
+      <div style="font-size:0.85rem;color:var(--navy);line-height:1.6;max-width:300px;font-weight:300">${winner.detail}</div>
+      <div style="display:flex;gap:0.5rem;margin-top:0.5rem;width:100%;max-width:320px">
+        <button style="flex:1;background:var(--navy);color:#fff;border:none;padding:0.75rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px" onclick="initQuiz()">Retake quiz</button>
+        <button style="flex:1;background:none;color:var(--navy);border:1px solid var(--border);padding:0.75rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px" onclick="goTo('home')">Home</button>
+      </div>
+    </div>`;
 }
