@@ -1,24 +1,24 @@
 const destinations = {
   Beach: [
-    { name: "Tulum", country: "Mexico", region: "CARIBBEAN", detail: "Clifftop ruins, turquoise cenotes, boho beach clubs", img: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?w=600&q=80" },
+    { name: "Tulum", country: "Mexico", region: "CARIBBEAN", detail: "Clifftop ruins, turquoise cenotes, boho beach clubs", img: "https://images.unsplash.com/photo-1501855901885-8b29fa615daf?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dHVsdW0lMjBtZXhpY298ZW58MHx8MHx8fDA%3D" },
     { name: "Santorini", country: "Greece", region: "EUROPE", detail: "White-washed cliffs, sunset views, volcanic beaches", img: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80" },
-    { name: "Bali", country: "Indonesia", region: "ASIA", detail: "Rice terraces, temple ceremonies, surf breaks", img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" },
+    { name: "Bali", country: "Indonesia", region: "ASIA", detail: "Rice terraces, temple ceremonies, surf breaks", img: "https://plus.unsplash.com/premium_photo-1661878915254-f3163e91d870?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmFsaXxlbnwwfHwwfHx8MA%3D%3D" },
     { name: "Maldives", country: "Maldives", region: "INDIAN OCEAN", detail: "Overwater bungalows, coral reefs, crystal lagoons", img: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80" },
     { name: "Amalfi Coast", country: "Italy", region: "EUROPE", detail: "Pastel villages, lemon groves, azure sea", img: "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?w=600&q=80" },
   ],
   City: [
     { name: "Tokyo", country: "Japan", region: "ASIA", detail: "Neon nights, ancient shrines, world-class ramen", img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" },
     { name: "Paris", country: "France", region: "EUROPE", detail: "Art museums, Seine walks, perfect croissants", img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80" },
-    { name: "New York", country: "USA", region: "AMERICAS", detail: "Skyline views, Central Park, endless energy", img: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80" },
-    { name: "Barcelona", country: "Spain", region: "EUROPE", detail: "Gaudí architecture, tapas bars, beach city life", img: "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=600&q=80" },
-    { name: "Istanbul", country: "Turkey", region: "EURASIA", detail: "Bazaars, mosques, Bosphorus sunsets", img: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80" },
+    { name: "New York", country: "USA", region: "AMERICAS", detail: "Skyline views, Central Park, endless energy", img: "https://images.unsplash.com/photo-1496588152823-86ff7695e68f?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bmV3JTIweW9yayUyMGNpdHl8ZW58MHx8MHx8fDA%3D" },
+    { name: "Barcelona", country: "Spain", region: "EUROPE", detail: "Gaudí architecture, tapas bars, beach city life", img: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmFyY2Vsb25hfGVufDB8fDB8fHww" },
+    { name: "Istanbul", country: "Turkey", region: "EURASIA", detail: "Bazaars, mosques, Bosphorus sunsets", img: "https://plus.unsplash.com/premium_photo-1661955588369-b0d28de38b45?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aXN0YW5idWwlMkMlMjB0dXJrZXl8ZW58MHx8MHx8fDA%3D" },
   ],
   Nature: [
     { name: "Patagonia", country: "Argentina/Chile", region: "S. AMERICA", detail: "Glaciers, condors, endless hiking trails", img: "https://images.unsplash.com/photo-1584782494342-19b561a6340d?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGF0YWdvbmlhJTIwYXJnZW50aW5hfGVufDB8fDB8fHww" },
-    { name: "Iceland", country: "Iceland", region: "NORDIC", detail: "Northern lights, geysers, black sand beaches", img: "https://images.unsplash.com/photo-1531168556467-80aace0d0144?w=600&q=80" },
+    { name: "Iceland", country: "Iceland", region: "NORDIC", detail: "Northern lights, geysers, black sand beaches", img: "https://images.unsplash.com/photo-1476610182048-b716b8518aae?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aWNlbGFuZHxlbnwwfHwwfHx8MA%3D%3D" },
     { name: "Queenstown", country: "New Zealand", region: "PACIFIC", detail: "Fjords, bungee jumping, Lord of the Rings scenery", img: "https://images.unsplash.com/photo-1565690482729-9290df702689?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHF1ZWVuc3Rvd258ZW58MHx8MHx8fDA%3D" },
     { name: "Costa Rica", country: "Costa Rica", region: "C. AMERICA", detail: "Cloud forests, sloths, volcano hot springs", img: "https://images.unsplash.com/photo-1586640866012-8273df34e593?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29zdGElMjByaWNhfGVufDB8fDB8fHww" },
-    { name: "Norway", country: "Norway", region: "NORDIC", detail: "Fjords, midnight sun, Viking heritage", img: "https://images.unsplash.com/photo-1520769945061-0a448c463865?w=600&q=80" },
+    { name: "Norway", country: "Norway", region: "NORDIC", detail: "Fjords, midnight sun, Viking heritage", img: "https://images.unsplash.com/photo-1518124880777-cf8c82231ffb?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG5vcndheXxlbnwwfHwwfHx8MA%3D%3D" },
   ],
   Cultural: [
     { name: "Kyoto", country: "Japan", region: "ASIA", detail: "Geisha districts, bamboo groves, tea ceremonies", img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=80" },
@@ -26,25 +26,44 @@ const destinations = {
     { name: "Marrakech", country: "Morocco", region: "AFRICA", detail: "Souks, riads, the call to prayer at dusk", img: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=600&q=80" },
     { name: "Petra", country: "Jordan", region: "MIDDLE EAST", detail: "Rose-red city carved in rock, ancient Nabataean trails", img: "https://images.unsplash.com/photo-1615811648503-479d06197ff3?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGV0cmElMkMlMjBqb3JkYW58ZW58MHx8MHx8fDA%3D" },
     { name: "Havana", country: "Cuba", region: "CARIBBEAN", detail: "Classic cars, salsa nights, crumbling grandeur", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTioNZJsvyirAyMvCW541KGj_zpyHPsBnzPtA&s" },
+    { name: "Varanasi", country: "India", region: "ASIA", detail: "Sacred Ganges rituals, ancient temples, one of the world’s oldest living cities", img: "https://images.unsplash.com/photo-1571536802807-30451e3955d8?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dmFyYW5hc2l8ZW58MHx8MHx8fDA%3D" },
   ],
   Luxury: [
     { name: "Amalfi Coast", country: "Italy", region: "EUROPE", detail: "Private yachts, cliff-side villas, fresh seafood", img: "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?w=600&q=80" },
     { name: "St. Barts", country: "France", region: "CARIBBEAN", detail: "Celebrity hideaway, pristine beaches, French dining", img: "https://images.unsplash.com/photo-1551213365-54cb536fb765?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3QlMjBiYXJ0aHN8ZW58MHx8MHx8fDA%3D0" },
-    { name: "Dubai", country: "UAE", region: "MIDDLE EAST", detail: "Sky-high hotels, desert safaris, gold everything", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" },
-    { name: "Tuscany", country: "Italy", region: "EUROPE", detail: "Wine estates, hilltop villas, truffle hunts", img: "https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=600&q=80" },
-    { name: "Bora Bora", country: "French Polynesia", region: "PACIFIC", detail: "Overwater bungalows, lagoon snorkeling, Mt. Otemanu", img: "https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?w=600&q=80" },
+    { name: "Dubai", country: "UAE", region: "MIDDLE EAST", detail: "Sky-high hotels, desert safaris, gold everything", img: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGR1YmFpfGVufDB8fDB8fHww" },
+    { name: "Tuscany", country: "Italy", region: "EUROPE", detail: "Wine estates, hilltop villas, truffle hunts", img: "https://images.unsplash.com/photo-1760681556160-59d74d81a2e6?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+    { name: "Bora Bora", country: "French Polynesia", region: "PACIFIC", detail: "Overwater bungalows, lagoon snorkeling, Mt. Otemanu", img: "https://images.unsplash.com/photo-1672812407183-001d3533f49a?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJvcmElMjBib3JhfGVufDB8fDB8fHww" },
   ],
   Adventure: [
     { name: "Nepal", country: "Nepal", region: "ASIA", detail: "Everest base camp, monasteries, yak butter tea", img: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&q=80" },
     { name: "Patagonia", country: "Chile", region: "S. AMERICA", detail: "Multi-day treks, condors, raw wilderness", img: "https://images.unsplash.com/photo-1715273157640-b0c2a2bec178?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGF0YWdvbmlhJTIwY2hpbGV8ZW58MHx8MHx8fDA%3D" },
     { name: "Peru", country: "Peru", region: "S. AMERICA", detail: "Machu Picchu, Inca trails, Amazon basin", img: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=600&q=80" },
-    { name: "Tanzania", country: "Tanzania", region: "AFRICA", detail: "Serengeti safari, Kilimanjaro, Zanzibar escape", img: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80" },
-    { name: "Vietnam", country: "Vietnam", region: "ASIA", detail: "Ha Long Bay kayaking, motorbike routes, street food", img: "https://images.unsplash.com/photo-1528127269322-539801943592?w=600&q=80" },
+    { name: "Tanzania", country: "Tanzania", region: "AFRICA", detail: "Serengeti safari, Kilimanjaro, Zanzibar escape", img: "https://images.unsplash.com/photo-1613864309738-9102a9e22883?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRhbnphbmlhfGVufDB8fDB8fHww" },
+    { name: "Vietnam", country: "Vietnam", region: "ASIA", detail: "Ha Long Bay kayaking, motorbike routes, street food", img: "https://images.unsplash.com/photo-1531737212413-667205e1cda7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmlldG5hbXxlbnwwfHwwfHx8MA%3D%3D" },
+    { name: "New Zealand", country: "New Zealand", region: "PACIFIC", detail: "Hiking, fjords, adrenaline sports, and epic landscapes", img: "https://plus.unsplash.com/premium_photo-1661962302792-4b05d3e08513?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bmV3JTIwemVhbGFuZHxlbnwwfHwwfHx8MA%3D%3D" },
+    { name: "Banff", country: "Canada", region: "AMERICAS", detail: "Turquoise lakes, mountain hikes, and wildlife in the Rockies", img: "https://images.unsplash.com/photo-1561134643-668f9057cce4?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFuZmYlMjBuYXRpb25hbCUyMHBhcmt8ZW58MHx8MHx8fDA%3D" },
+  ],
+  Social:   [
+    { name: "Ibiza", country: "Spain", region: "EUROPE", detail: "World-class clubs, beach parties, sunset sessions", img: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aWJpemElMjBwYXJ0eXxlbnwwfHwwfHx8MA%3D%3D" },
+    { name: "Miami", country: "USA", region: "AMERICAS", detail: "Rooftop bars, Art Deco vibes, nonstop nightlife", img: "https://images.unsplash.com/photo-1605723517503-3cadb5818a0c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWlhbWklMjBmbG9yaWRhfGVufDB8fDB8fHww" },
+    { name: "Rio de Janeiro", country: "Brazil", region: "S. AMERICA", detail: "Carnival energy, beach culture, samba nights", img: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=600&q=80" },
+    { name: "Berlin", country: "Germany", region: "EUROPE", detail: "Underground clubs, street art, 72-hour raves", img: "https://images.unsplash.com/photo-1587330979470-3595ac045ab0?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmVybGlufGVufDB8fDB8fHww" },
+    { name: "Las Vegas", country: "USA", region: "AMERICAS", detail: "Casinos, pool parties, celebrity residencies", img: "https://images.unsplash.com/photo-1577334928618-2ff2bf09e827?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bGFzJTIwdmVnYXN8ZW58MHx8MHx8fDA%3D" },
+  ],
+  Foodie:   [
+    { name: "Tokyo", country: "Japan", region: "ASIA", detail: "More Michelin stars than anywhere, ramen to omakase", img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" },
+    { name: "San Sebastián", country: "Spain", region: "EUROPE", detail: "Pintxos bars, the most Michelin stars per capita", img: "https://images.unsplash.com/photo-1723529816376-b0a08e212263?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2FuJTIwc2ViYXN0aWFufGVufDB8fDB8fHww" },
+    { name: "Bangkok", country: "Thailand", region: "ASIA", detail: "Street food paradise, floating markets, bold flavors", img: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&q=80" },
+    { name: "Bologna", country: "Italy", region: "EUROPE", detail: "Pasta birthplace, ragu, mortadella, food markets", img: "https://images.unsplash.com/photo-1635469019177-7264fc1e013c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ym9sb2duYXxlbnwwfHwwfHx8MA%3D%3D" },
+    { name: "Mexico City", country: "Mexico", region: "AMERICAS", detail: "Tacos, mole, mezcal bars, world-class fine dining", img: "https://images.unsplash.com/photo-1601585144584-2a53183be14c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWV4aWNvJTIwY2l0eXxlbnwwfHwwfHx8MA%3D%3D" },
+    { name: "New Orleans", country: "USA", region: "AMERICAS", detail: "Creole and Cajun classics, gumbo, po’boys, and beignets", img: "https://images.unsplash.com/photo-1635352934507-cd4ad73275c6?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV3JTIwb3JsZWFuc3xlbnwwfHwwfHx8MA%3D%3D" },
+    { name: "Lima", country: "Peru", region: "S. AMERICA", detail: "Ceviche, Nikkei fusion, and one of the world’s top fine dining scenes", img: "https://images.unsplash.com/photo-1580530719837-952e0515b69a?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGltYSUyMHBlcnV8ZW58MHx8MHx8fDA%3D" },
   ]
 };
 
 let currentVibe = null, pendingMode = null, currentSwipeIndex = 0, swipeStack = [],
-    wheelAngle = 0, isSpinning = false, bracketMatches = [], bracketRound = 0, 
+    wheelAngle = 0, isSpinning = false, bracketMatches = [], bracketRound = 0,
     bracketMatchIndex = 0, likedDestinations = [];
 
 const wheelColors = ['#3B7DD8','#C9A84C','#1A2B3C','#E8C87A','#2A5AA8','#BA7517','#3B7DD8','#C4A882'];
@@ -125,6 +144,7 @@ function doSwipe(dir) {
   const card = document.querySelector('.swipe-card.top');
   if (!card) return;
   if (dir === 'right') likedDestinations.push(swipeStack[currentSwipeIndex]);
+  card.style.pointerEvents = 'none';
   card.classList.add(dir === 'left' ? 'exit-left' : 'exit-right');
   setTimeout(() => { currentSwipeIndex++; renderSwipe(); }, 320);
 }
@@ -135,47 +155,59 @@ function renderSwipe() {
   const prog = document.getElementById('swipe-progress');
 
   if (currentSwipeIndex >= swipeStack.length) {
-  prog.textContent = '';
+    prog.textContent = '';
+    document.querySelector('.swipe-actions').style.display = 'none';
 
-  // Hide the swipe buttons
-  document.querySelector('.swipe-actions').style.display = 'none';
+    if (likedDestinations.length === 0) {
+      arena.style.height = '420px';
+      arena.style.maxHeight = '';
+      arena.style.overflowY = 'visible';
+      arena.style.overflowX = 'visible';
+      arena.style.alignItems = 'center';
+      arena.style.justifyContent = 'center';
+      arena.style.paddingTop = '0';
+      arena.innerHTML = `
+        <div style="text-align:center;padding:2rem">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:0.5rem;color:#1A2B3C">No matches!</div>
+          <div style="color:#8A9AB0;font-size:0.85rem;margin-bottom:1.5rem">You didn't like any destinations.</div>
+          <button style="background:#1A2B3C;color:#fff;border:none;padding:0.75rem 1.5rem;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px" onclick="initSwipe()">Try again</button>
+        </div>`;
+      return;
+    }
 
-  if (likedDestinations.length === 0) {
+    arena.style.height = 'auto';
+    arena.style.maxHeight = 'none';
+    arena.style.overflowY = 'visible';
+    arena.style.overflowX = 'hidden';
+    arena.style.alignItems = 'center';
+    arena.style.justifyContent = 'flex-start';
+    arena.style.paddingTop = '0';
+
     arena.innerHTML = `
-      <div style="text-align:center;padding:2rem">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:0.5rem;color:var(--navy)">No matches!</div>
-        <div style="color:var(--slate);font-size:0.85rem;margin-bottom:1.5rem">You didn't like any destinations.</div>
-        <button style="background:var(--navy);color:#fff;border:none;padding:0.75rem 1.5rem;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px" onclick="initSwipe()">Try again</button>
+      <div style="width:min(300px,88vw);display:flex;flex-direction:column;gap:0.75rem;padding-bottom:1rem;margin:0 auto;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:#1A2B3C;text-align:center;margin-bottom:0.25rem;">
+          ♥ ${likedDestinations.length} place${likedDestinations.length > 1 ? 's' : ''} you loved
+        </div>
+        ${likedDestinations.map(d => `
+          <div style="width:min(300px,88vw);border-radius:10px;overflow:hidden;border:1px solid #D8E4F0;">
+            <img src="${d.img}" style="width:100%;height:260px;object-fit:cover;display:block;" />
+            <div style="padding:1rem 1.1rem 1.1rem;background:#fff;border-top:1px solid #D8E4F0;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;margin-bottom:3px;color:#1A2B3C;">${d.name}, ${d.country}</div>
+              <div style="font-size:0.72rem;color:#8A9AB0;font-weight:300;">${d.detail}</div>
+            </div>
+          </div>`).join('')}
+        <div style="display:flex;gap:0.5rem;">
+          <button style="flex:1;background:#1A2B3C;color:#fff;border:none;padding:0.75rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px;" onclick="initSwipe()">Swipe again</button>
+          <button style="flex:1;background:none;color:#1A2B3C;border:1px solid #D8E4F0;padding:0.75rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px;" onclick="goTo('home')">Home</button>
+        </div>
       </div>`;
     return;
   }
 
-  const cards = likedDestinations.map(d => `
-    <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:0.75rem;width:min(300px,88vw);flex-shrink:0;">
-      <img src="${d.img}" style="width:100%;height:260px;object-fit:cover;display:block;" />
-      <div style="padding:1rem 1.1rem 1.1rem;border-top:1px solid var(--border);background:var(--white);">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;margin-bottom:3px;color:#1A2B3C;">${d.name}, ${d.country}</div>
-        <div style="font-size:0.72rem;color:#8A9AB0;font-weight:300;">${d.detail}</div>
-      </div>
-    </div>`).join('');
-
-  arena.innerHTML = `
-    <div style="width:100%;max-height:500px;overflow-y:auto;display:flex;flex-direction:column;align-items:center;padding:0.25rem">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--navy);margin-bottom:0.75rem;text-align:center">
-        ♥ ${likedDestinations.length} place${likedDestinations.length > 1 ? 's' : ''} you loved
-      </div>
-      ${cards}
-      <div style="display:flex;gap:0.5rem;margin-top:0.5rem;width:min(300px,88vw)">
-        <button style="flex:1;background:var(--navy);color:#fff;border:none;padding:0.75rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px" onclick="initSwipe()">Swipe again</button>
-        <button style="flex:1;background:none;color:var(--navy);border:1px solid var(--border);padding:0.75rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px" onclick="goTo('home')">Home</button>
-      </div>
-    </div>`;
-  return;
-}
-
   prog.textContent = `${currentSwipeIndex + 1} / ${swipeStack.length}`;
 
-  for (let i = Math.min(currentSwipeIndex + 2, swipeStack.length - 1); i >= currentSwipeIndex; i--) {
+  const maxVisible = Math.min(currentSwipeIndex + 2, swipeStack.length - 1);
+  for (let i = maxVisible; i >= currentSwipeIndex; i--) {
     const d = swipeStack[i];
     const card = document.createElement('div');
     card.className = 'swipe-card ' + (i === currentSwipeIndex ? 'top' : i === currentSwipeIndex + 1 ? 'mid' : 'back');
@@ -198,7 +230,15 @@ function initSwipe() {
   swipeStack = [...(destinations[currentVibe] || destinations.Beach)];
   currentSwipeIndex = 0;
   likedDestinations = [];
-  document.querySelector('.swipe-actions').style.display = 'flex'; // show buttons again
+  document.querySelector('.swipe-actions').style.display = 'flex';
+  const arena = document.getElementById('swipe-arena');
+  arena.style.height = '420px';
+  arena.style.maxHeight = '';
+  arena.style.overflowY = 'visible';
+  arena.style.overflowX = 'visible';
+  arena.style.alignItems = 'center';
+  arena.style.justifyContent = 'center';
+  arena.style.paddingTop = '0';
   renderSwipe();
 }
 
@@ -234,16 +274,16 @@ function spinWheel() {
     const dest = items[idx];
     const resultEl = document.querySelector('.spin-result');
     resultEl.innerHTML = `
-      <div style="width:100%;max-width:280px;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:var(--white);">
+      <div style="width:100%;max-width:280px;border-radius:10px;overflow:hidden;border:1px solid #D8E4F0;background:#fff;">
         <img src="${dest.img}" style="width:100%;height:160px;object-fit:cover;display:block;" />
         <div style="padding:0.9rem 1rem 1rem;">
-          <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);font-weight:500;margin-bottom:4px">Your destination</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--navy)">${dest.name}</div>
-          <div style="font-size:0.72rem;color:var(--slate);margin-top:2px">${dest.country} · ${dest.region}</div>
-          <div style="font-size:0.72rem;color:var(--slate);font-weight:300;margin-top:4px">${dest.detail}</div>
+          <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:#C9A84C;font-weight:500;margin-bottom:4px">Your destination</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#1A2B3C">${dest.name}</div>
+          <div style="font-size:0.72rem;color:#8A9AB0;margin-top:2px">${dest.country} · ${dest.region}</div>
+          <div style="font-size:0.72rem;color:#8A9AB0;font-weight:300;margin-top:4px">${dest.detail}</div>
         </div>
       </div>
-      <button onclick="initSpin()" style="background:var(--navy);color:#fff;border:none;padding:0.75rem 1.5rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px;margin-top:0.5rem;">Spin again</button>`;
+      <button onclick="initSpin()" style="background:#1A2B3C;color:#fff;border:none;padding:0.75rem 1.5rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px;margin-top:0.5rem;">Spin again</button>`;
   }
   requestAnimationFrame(animate);
 }
@@ -298,23 +338,22 @@ function renderBracket() {
   if (!a || !b) { showWinner(bracketMatches[0]); return; }
   const label = bracketRound === 1 ? 'Semi-final' : bracketRound === 2 ? 'Final' : `Round ${bracketRound}`;
   const prog = (bracketMatchIndex / Math.floor(bracketMatches.length / 2)) * 100;
-  const aImg = `<img src="${a.img}" style="width:100%;height:160px;object-fit:cover;display:block;" />`;
-  const bImg = `<img src="${b.img}" style="width:100%;height:160px;object-fit:cover;display:block;" />`;
   cont.innerHTML = `
     <div class="bracket-round">${label} · Which would you choose?</div>
     <div class="bracket-vs">
       <div class="bracket-card" id="bc-a" onclick="pickBracket(0)">
-        <div class="bracket-card-img">${aImg}</div>
+        <div class="bracket-card-img"><img src="${a.img}" style="width:100%;height:160px;object-fit:cover;display:block;" /></div>
         <div class="bracket-card-foot"><div class="bracket-card-name">${a.name}</div></div>
       </div>
       <div class="vs-divider">vs</div>
       <div class="bracket-card" id="bc-b" onclick="pickBracket(1)">
-        <div class="bracket-card-img">${bImg}</div>
+        <div class="bracket-card-img"><img src="${b.img}" style="width:100%;height:160px;object-fit:cover;display:block;" /></div>
         <div class="bracket-card-foot"><div class="bracket-card-name">${b.name}</div></div>
       </div>
     </div>
     <div class="bracket-progress"><div class="bracket-bar" style="width:${prog}%"></div></div>
-    <div class="bracket-sub">${a.name}: ${a.detail}</div>`;
+    <div class="bracket-sub" id="bracket-sub-a">${a.name}: ${a.detail}</div>
+    <div class="bracket-sub" id="bracket-sub-b">${b.name}: ${b.detail}</div>`;
 }
 
 function pickBracket(idx) {
@@ -335,35 +374,23 @@ function pickBracket(idx) {
 function showWinner(d) {
   document.getElementById('bracket-container').innerHTML = `
     <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;text-align:center;padding:1rem">
-      <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);font-weight:500">Your next destination</div>
+      <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.12em;color:#C9A84C;font-weight:500">Your next destination</div>
       <div style="width:200px;height:200px;border-radius:8px;overflow:hidden;">
         <img src="${d.img}" style="width:100%;height:100%;object-fit:cover;" />
       </div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--navy)">${d.name}</div>
-      <div style="font-size:0.75rem;color:var(--slate)">${d.country} · ${d.detail}</div>
-      <button style="margin-top:0.5rem;background:var(--navy);color:#fff;border:none;padding:0.75rem 1.5rem;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px" onclick="initBracket()">Play again</button>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:#1A2B3C">${d.name}</div>
+      <div style="font-size:0.75rem;color:#8A9AB0">${d.country} · ${d.detail}</div>
+      <button style="margin-top:0.5rem;background:#1A2B3C;color:#fff;border:none;padding:0.75rem 1.5rem;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px" onclick="initBracket()">Play again</button>
     </div>`;
 }
 
 // ─── QUIZ ─────────────────────────────────────────────────────────────────────
 
 const quizQuestions = [
-  {
-    question: "What's your ideal climate?",
-    options: ["Warm & sunny", "Cool & crisp", "Tropical & humid", "Mild & comfortable"]
-  },
-  {
-    question: "What's your travel style?",
-    options: ["Relax and do nothing", "Explore culture & history", "Adventure & outdoors", "Food, nightlife & city life"]
-  },
-  {
-    question: "How do you feel about crowds?",
-    options: ["Hidden gems only", "A little buzz is fine", "I love a lively scene", "Anywhere is fine"]
-  },
-  {
-    question: "What's your budget?",
-    options: ["Budget friendly", "Mid range", "Splurge worthy", "Money is no object"]
-  }
+  { question: "What's your ideal climate?", options: ["Warm & sunny", "Cool & crisp", "Tropical & humid", "Mild & comfortable"] },
+  { question: "What's your travel style?", options: ["Relax and do nothing", "Explore culture & history", "Adventure & outdoors", "Food, nightlife & city life"] },
+  { question: "How do you feel about crowds?", options: ["Hidden gems only", "A little buzz is fine", "I love a lively scene", "Anywhere is fine"] },
+  { question: "What's your budget?", options: ["Budget friendly", "Mid range", "Splurge worthy", "Money is no object"] }
 ];
 
 let quizAnswers = [];
@@ -378,32 +405,26 @@ function initQuiz() {
 
 function renderQuiz() {
   const cont = document.getElementById('quiz-container');
-
-  if (quizStep >= quizQuestions.length) {
-    submitQuiz();
-    return;
-  }
-
+  if (quizStep >= quizQuestions.length) { submitQuiz(); return; }
   const q = quizQuestions[quizStep];
-  const progress = ((quizStep / quizQuestions.length) * 100);
-
+  const progress = (quizStep / quizQuestions.length) * 100;
   cont.innerHTML = `
     <div style="padding:1.5rem;display:flex;flex-direction:column;gap:1.25rem;flex:1">
-      <div style="background:var(--border);border-radius:10px;height:3px;overflow:hidden">
-        <div style="width:${progress}%;height:100%;background:var(--gold);border-radius:10px;transition:width 0.3s"></div>
+      <div style="background:#D8E4F0;border-radius:10px;height:3px;overflow:hidden">
+        <div style="width:${progress}%;height:100%;background:#C9A84C;border-radius:10px;transition:width 0.3s"></div>
       </div>
-      <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);font-weight:500">
+      <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.12em;color:#C9A84C;font-weight:500">
         Question ${quizStep + 1} of ${quizQuestions.length}
       </div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--navy);line-height:1.2">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:#1A2B3C;line-height:1.2">
         ${q.question}
       </div>
       <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:0.5rem">
-        ${q.options.map((opt, i) => `
+        ${q.options.map(opt => `
           <button onclick="selectQuizAnswer('${opt}')"
-            style="background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:1rem 1.25rem;text-align:left;font-family:'Inter',sans-serif;font-size:0.88rem;color:var(--navy);cursor:pointer;transition:all 0.15s;font-weight:400"
-            onmouseover="this.style.borderColor='var(--gold)';this.style.background='var(--gold-pale)'"
-            onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--white)'">
+            style="background:#fff;border:1.5px solid #D8E4F0;border-radius:8px;padding:1rem 1.25rem;text-align:left;font-family:'Inter',sans-serif;font-size:0.88rem;color:#1A2B3C;cursor:pointer;transition:all 0.15s;font-weight:400"
+            onmouseover="this.style.borderColor='#C9A84C';this.style.background='#FBF5E6'"
+            onmouseout="this.style.borderColor='#D8E4F0';this.style.background='#fff'">
             ${opt}
           </button>`).join('')}
       </div>
@@ -423,20 +444,18 @@ async function submitQuiz() {
       <div style="display:flex;gap:4px">
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
       </div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--navy)">Finding your perfect destination...</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#1A2B3C">Finding your perfect destination...</div>
     </div>`;
 
   const scores = {};
   const allDests = destinations[currentVibe] || Object.values(destinations).flat();
   allDests.forEach(d => scores[d.name] = 0);
-
   const [climate, style, crowds, budget] = quizAnswers;
 
   const warmDests = ["Tulum","Santorini","Bali","Maldives","Amalfi Coast","Dubai","Bora Bora","St. Barts","Havana","Marrakech","Petra","Vietnam","Tanzania","Peru"];
   const coolDests = ["Iceland","Patagonia","Norway","Queenstown","Kyoto"];
   const tropicalDests = ["Bali","Maldives","Costa Rica","Tulum","Vietnam","Tanzania","Bora Bora"];
   const mildDests = ["Paris","Barcelona","Rome","Istanbul","Tokyo","New York"];
-
   if (climate === "Warm & sunny") warmDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 3; });
   if (climate === "Cool & crisp") coolDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 3; });
   if (climate === "Tropical & humid") tropicalDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 3; });
@@ -446,7 +465,6 @@ async function submitQuiz() {
   const cultureDests = ["Kyoto","Rome","Marrakech","Petra","Havana","Istanbul","Barcelona","Paris"];
   const adventureDests = ["Nepal","Patagonia","Peru","Tanzania","Costa Rica","Iceland","Queenstown","Norway","Vietnam"];
   const cityDests = ["Tokyo","New York","Barcelona","Paris","Istanbul","Dubai","Havana"];
-
   if (style === "Relax and do nothing") relaxDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 3; });
   if (style === "Explore culture & history") cultureDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 3; });
   if (style === "Adventure & outdoors") adventureDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 3; });
@@ -455,7 +473,6 @@ async function submitQuiz() {
   const hiddenDests = ["Tulum","Patagonia","Nepal","Costa Rica","Norway","Tuscany","Queenstown","Vietnam"];
   const buzzDests = ["Bali","Santorini","Barcelona","Kyoto","Marrakech","Havana"];
   const livelDests = ["New York","Tokyo","Dubai","Istanbul","Paris","Barcelona"];
-
   if (crowds === "Hidden gems only") hiddenDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 2; });
   if (crowds === "A little buzz is fine") buzzDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 2; });
   if (crowds === "I love a lively scene") livelDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 2; });
@@ -464,28 +481,26 @@ async function submitQuiz() {
   const midDests = ["Barcelona","Istanbul","Kyoto","Rome","Queenstown","Norway","Iceland"];
   const splurgeDests = ["Santorini","Amalfi Coast","Paris","Tokyo","New York","Tuscany"];
   const luxDests = ["Maldives","Bora Bora","Dubai","St. Barts","Nepal","Tanzania","Petra"];
-
   if (budget === "Budget friendly") budgetDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 2; });
   if (budget === "Mid range") midDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 2; });
   if (budget === "Splurge worthy") splurgeDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 2; });
   if (budget === "Money is no object") luxDests.forEach(n => { if (scores[n] !== undefined) scores[n] += 2; });
 
   const winner = allDests.reduce((best, d) => scores[d.name] > scores[best.name] ? d : best, allDests[0]);
-
   await new Promise(r => setTimeout(r, 1200));
 
   cont.innerHTML = `
     <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center;padding:1.5rem">
-      <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);font-weight:500">Your perfect match</div>
+      <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.12em;color:#C9A84C;font-weight:500">Your perfect match</div>
       <div style="width:100%;max-width:320px;height:200px;border-radius:10px;overflow:hidden">
         <img src="${winner.img}" style="width:100%;height:100%;object-fit:cover;" />
       </div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--navy)">${winner.name}</div>
-      <div style="font-size:0.75rem;color:var(--slate)">${winner.country} · ${winner.region}</div>
-      <div style="font-size:0.85rem;color:var(--navy);line-height:1.6;max-width:300px;font-weight:300">${winner.detail}</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:#1A2B3C">${winner.name}</div>
+      <div style="font-size:0.75rem;color:#8A9AB0">${winner.country} · ${winner.region}</div>
+      <div style="font-size:0.85rem;color:#1A2B3C;line-height:1.6;max-width:300px;font-weight:300">${winner.detail}</div>
       <div style="display:flex;gap:0.5rem;margin-top:0.5rem;width:100%;max-width:320px">
-        <button style="flex:1;background:var(--navy);color:#fff;border:none;padding:0.75rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px" onclick="initQuiz()">Retake quiz</button>
-        <button style="flex:1;background:none;color:var(--navy);border:1px solid var(--border);padding:0.75rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px" onclick="goTo('home')">Home</button>
+        <button style="flex:1;background:#1A2B3C;color:#fff;border:none;padding:0.75rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px" onclick="initQuiz()">Retake quiz</button>
+        <button style="flex:1;background:none;color:#1A2B3C;border:1px solid #D8E4F0;padding:0.75rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:3px" onclick="goTo('home')">Home</button>
       </div>
     </div>`;
 }
