@@ -1,6 +1,6 @@
 ## Wander
 
-This website chooses a travel destination for you from different modes of your choosing. 
+This website chooses a travel destination for you the user from different modes of your choosing. 
 
 # Features
 - 🃏 Swipe: Tinder-style yes/no on destinations
