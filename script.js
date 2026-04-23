@@ -26,7 +26,6 @@ const destinations = {
     { name: "Marrakech", country: "Morocco", region: "AFRICA", detail: "Souks, riads, the call to prayer at dusk", img: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=600&q=80" },
     { name: "Petra", country: "Jordan", region: "MIDDLE EAST", detail: "Rose-red city carved in rock, ancient Nabataean trails", img: "https://images.unsplash.com/photo-1615811648503-479d06197ff3?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGV0cmElMkMlMjBqb3JkYW58ZW58MHx8MHx8fDA%3D" },
     { name: "Havana", country: "Cuba", region: "CARIBBEAN", detail: "Classic cars, salsa nights, crumbling grandeur", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTioNZJsvyirAyMvCW541KGj_zpyHPsBnzPtA&s" },
-    { name: "Varanasi", country: "India", region: "ASIA", detail: "Sacred Ganges rituals, ancient temples, one of the world’s oldest living cities", img: "https://images.unsplash.com/photo-1571536802807-30451e3955d8?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dmFyYW5hc2l8ZW58MHx8MHx8fDA%3D" },
   ],
   Luxury: [
     { name: "Amalfi Coast", country: "Italy", region: "EUROPE", detail: "Private yachts, cliff-side villas, fresh seafood", img: "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?w=600&q=80" },
@@ -41,8 +40,6 @@ const destinations = {
     { name: "Peru", country: "Peru", region: "S. AMERICA", detail: "Machu Picchu, Inca trails, Amazon basin", img: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=600&q=80" },
     { name: "Tanzania", country: "Tanzania", region: "AFRICA", detail: "Serengeti safari, Kilimanjaro, Zanzibar escape", img: "https://images.unsplash.com/photo-1613864309738-9102a9e22883?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRhbnphbmlhfGVufDB8fDB8fHww" },
     { name: "Vietnam", country: "Vietnam", region: "ASIA", detail: "Ha Long Bay kayaking, motorbike routes, street food", img: "https://images.unsplash.com/photo-1531737212413-667205e1cda7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmlldG5hbXxlbnwwfHwwfHx8MA%3D%3D" },
-    { name: "New Zealand", country: "New Zealand", region: "PACIFIC", detail: "Hiking, fjords, adrenaline sports, and epic landscapes", img: "https://plus.unsplash.com/premium_photo-1661962302792-4b05d3e08513?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bmV3JTIwemVhbGFuZHxlbnwwfHwwfHx8MA%3D%3D" },
-    { name: "Banff", country: "Canada", region: "AMERICAS", detail: "Turquoise lakes, mountain hikes, and wildlife in the Rockies", img: "https://images.unsplash.com/photo-1561134643-668f9057cce4?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFuZmYlMjBuYXRpb25hbCUyMHBhcmt8ZW58MHx8MHx8fDA%3D" },
   ],
   Social:   [
     { name: "Ibiza", country: "Spain", region: "EUROPE", detail: "World-class clubs, beach parties, sunset sessions", img: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aWJpemElMjBwYXJ0eXxlbnwwfHwwfHx8MA%3D%3D" },
@@ -57,8 +54,6 @@ const destinations = {
     { name: "Bangkok", country: "Thailand", region: "ASIA", detail: "Street food paradise, floating markets, bold flavors", img: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&q=80" },
     { name: "Bologna", country: "Italy", region: "EUROPE", detail: "Pasta birthplace, ragu, mortadella, food markets", img: "https://images.unsplash.com/photo-1635469019177-7264fc1e013c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ym9sb2duYXxlbnwwfHwwfHx8MA%3D%3D" },
     { name: "Mexico City", country: "Mexico", region: "AMERICAS", detail: "Tacos, mole, mezcal bars, world-class fine dining", img: "https://images.unsplash.com/photo-1601585144584-2a53183be14c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWV4aWNvJTIwY2l0eXxlbnwwfHwwfHx8MA%3D%3D" },
-    { name: "New Orleans", country: "USA", region: "AMERICAS", detail: "Creole and Cajun classics, gumbo, po’boys, and beignets", img: "https://images.unsplash.com/photo-1635352934507-cd4ad73275c6?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV3JTIwb3JsZWFuc3xlbnwwfHwwfHx8MA%3D%3D" },
-    { name: "Lima", country: "Peru", region: "S. AMERICA", detail: "Ceviche, Nikkei fusion, and one of the world’s top fine dining scenes", img: "https://images.unsplash.com/photo-1580530719837-952e0515b69a?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGltYSUyMHBlcnV8ZW58MHx8MHx8fDA%3D" },
   ]
 };
 
