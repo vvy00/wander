@@ -1,6 +1,6 @@
 # Wander
 
-This website chooses a travel destination for you the user from different modes of your choosing. 
+This website chooses a travel destination for you the user from different modes of your choosing. I used HTML, CSS, and JavaScript to build it.
 
 ## Features
 - 🃏 Swipe: Tinder-style yes/no on destinations
