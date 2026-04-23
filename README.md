@@ -1,12 +1,12 @@
 # Wander
 
-This website chooses a travel destination for you the user from different modes of your choosing. I used HTML, CSS, and JavaScript to build it.
+This website chooses a travel destination for you from different modes of your choosing. I used HTML, CSS, and JavaScript to build it.
 
-## Features
-- 🃏 Swipe: Tinder-style yes/no on destinations
-- 🌍 Spin: Let the globe decide for you
-- 🏆 Competition: Head-to-head destination tournament
-- ❓ Quiz: Answer questions to find your dream trip
+## Modes
+- Swipe: Tinder-style yes/no on destinations
+- Spin: Let the globe decide for you
+- Competition: Head-to-head destination tournament
+- Quiz: Answer questions to find your dream trip
 
 ## Vibes
 - 🏖️ Beach: Sun, sand, sea
