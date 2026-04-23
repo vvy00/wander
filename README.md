@@ -5,7 +5,7 @@ This website chooses a travel destination for you from different modes of your c
 ## Modes
 - Swipe: Tinder-style yes/no on destinations
 - Spin: Let the globe decide for you
-- Competition: Head-to-head destination tournament
+- Competition: Destination tournament
 - Quiz: Answer questions to find your dream trip
 
 ## Vibes
