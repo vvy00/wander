@@ -20,5 +20,10 @@ This website chooses a travel destination for you from different modes of your c
 - 🎉 Social: Parties & nightlife
 - 🍜 Foodie: Flavors & cuisine
 
+## Stats
+- 4 modes
+- 8 vibes
+- 40+ destinations
+
 ## AI Usage
 Used ChatGPT for debugging and cleaning up code
