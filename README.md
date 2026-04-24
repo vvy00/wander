@@ -1,6 +1,6 @@
 # Wander
 
-This website chooses a travel destination for you from different modes of your choosing. I used HTML, CSS, and JavaScript to build this.
+This website "Wander" chooses a travel destination for you from different modes of your choosing. I used HTML, CSS, and JavaScript to build this.
 
 <img width="1275" height="700" alt="wander" src="https://github.com/user-attachments/assets/57ccd623-51bc-4c01-a33d-3002b73af70e" />
 
