@@ -1,4 +1,4 @@
-# <img width="40" height="40" alt="wanderlogo" src="https://github.com/user-attachments/assets/10c3b740-892f-4fd7-bc9a-a1e0b952b094" /> Wander
+# <img width="40" height="40" alt="wanderlogo" src="https://github.com/user-attachments/assets/10c3b740-892f-4fd7-bc9a-a1e0b952b094" />Wander
 
 This website "Wander" chooses a travel destination for you from different modes of your choosing. I used HTML, CSS, and JavaScript to build this.
 
