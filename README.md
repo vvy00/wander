@@ -1,6 +1,6 @@
 # <img width="40" height="40" alt="wanderlogo" src="https://github.com/user-attachments/assets/10c3b740-892f-4fd7-bc9a-a1e0b952b094" /> Wander
 
-This website "Wander" chooses a travel destination for you from different modes of your choosing. It uses modern & minimalistic UI. I used HTML, CSS, and JavaScript to build this.
+This website "Wander" chooses a travel destination for you from different modes of your choosing. It has a modern & minimalistic UI. I used HTML, CSS, and JavaScript to build this.
 
 <img width="1275" height="700" alt="wander" src="https://github.com/user-attachments/assets/57ccd623-51bc-4c01-a33d-3002b73af70e" />
 
