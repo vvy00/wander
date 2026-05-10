@@ -15,7 +15,7 @@ This website "Wander" chooses a travel destination for you from different modes 
 - City: Culture & nightlife
 - Nature: Wild & off-grid
 - Cultural: History & heritage
-- Luxury: Indulgent escapes
+- Luxury: Luxurious escapes
 - Adventure: Thrills & adrenaline
 - Social: Parties & nightlife
 - Foodie: Flavors & cuisine
