@@ -21,8 +21,8 @@ This website "Wander" chooses a travel destination for you from different modes 
 - Foodie: Flavors & cuisine
 
 ## Stats
-- Modes: 4
-- Vibes: 8
+- Modes: 4 total
+- Vibes: 8 total
 - Destinations: 40+
 
 ## AI Usage
